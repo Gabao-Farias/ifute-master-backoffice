@@ -1,0 +1,39 @@
+import { cn } from '@/lib/utils';
+
+type LogoProps = {
+  className?: string;
+  size?: number;
+};
+
+/**
+ * Logo da iFute (reaproveitado do backoffice original). Usa `currentColor`,
+ * então a cor é controlada via classe utilitária (ex.: `text-primary`).
+ */
+export function Logo({ className, size = 40 }: LogoProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 1500 1500"
+      fill="none"
+      className={cn('text-primary', className)}
+      aria-label="iFute"
+      role="img"
+    >
+      <path
+        d="M0 579.876C328.321 870.314 992.481 1460.2 1022.56 1496.26H1500L853.383 922.393L984.962 811.225L853.383 679.025L714.286 811.225L451.128 579.876L781.955 291.44L714.286 0L0 579.876Z"
+        fill="currentColor"
+      />
+      <rect
+        width="134.815"
+        height="134.849"
+        transform="matrix(0.671348 -0.741142 0.742808 0.669505 315 1102.41)"
+        fill="currentColor"
+      />
+      <path
+        d="M528.75 1110.97L960 1500H757.5L438.75 1211.97L528.75 1110.97Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
