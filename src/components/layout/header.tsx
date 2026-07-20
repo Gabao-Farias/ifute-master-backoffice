@@ -1,5 +1,8 @@
 import { LogOut, ShieldCheck } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
+import { NAV_ITEMS } from '@/config/navigation';
+import { cn } from '@/lib/utils';
 import { Logo } from '@/components/brand/logo';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -29,6 +32,26 @@ export function Header() {
           </span>
         </div>
       </div>
+
+      <nav className="ml-4 flex items-center gap-1">
+        {NAV_ITEMS.map((item) => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            end
+            className={({ isActive }) =>
+              cn(
+                'rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
+                isActive
+                  ? 'bg-accent text-accent-foreground'
+                  : 'text-muted-foreground hover:text-foreground',
+              )
+            }
+          >
+            {item.label}
+          </NavLink>
+        ))}
+      </nav>
 
       <div className="ml-auto flex items-center gap-2">
         <ThemeToggle />
