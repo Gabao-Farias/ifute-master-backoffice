@@ -14,6 +14,16 @@ export const brlCompactFromCents = (cents: number) =>
     maximumFractionDigits: 1,
   });
 
+/** ISO string → data e hora local "20/07/2026, 14:32". */
+export const dateTime = (iso: string) =>
+  new Date(iso).toLocaleString('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
 /** `YYYY-MM` → rótulo curto "jul/25". */
 export const monthLabel = (yearMonth: string) => {
   const [year, month] = yearMonth.split('-').map(Number);
