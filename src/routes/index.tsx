@@ -9,6 +9,7 @@ import { ProtectedRoute } from './protected-route';
 const LoginPage = lazy(() => import('@/pages/login'));
 const DashboardPage = lazy(() => import('@/pages/dashboard'));
 const RecentsPage = lazy(() => import('@/pages/recents'));
+const PlaceSuggestionsPage = lazy(() => import('@/pages/place-suggestions'));
 const WithdrawalsPage = lazy(() => import('@/pages/withdrawals'));
 
 function PageFallback() {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
     children: [
       { path: ROUTES.dashboard, element: lazyEl(<DashboardPage />) },
       { path: ROUTES.recents, element: lazyEl(<RecentsPage />) },
+      {
+        path: ROUTES.placeSuggestions,
+        element: lazyEl(<PlaceSuggestionsPage />),
+      },
       { path: ROUTES.withdrawals, element: lazyEl(<WithdrawalsPage />) },
     ],
   },
