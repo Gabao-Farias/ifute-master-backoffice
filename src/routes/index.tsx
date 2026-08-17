@@ -10,6 +10,7 @@ const LoginPage = lazy(() => import('@/pages/login'));
 const DashboardPage = lazy(() => import('@/pages/dashboard'));
 const RecentsPage = lazy(() => import('@/pages/recents'));
 const WithdrawalsPage = lazy(() => import('@/pages/withdrawals'));
+const DemandPage = lazy(() => import('@/pages/demand'));
 
 function PageFallback() {
   return (
@@ -37,6 +38,7 @@ export const router = createBrowserRouter([
     children: [
       { path: ROUTES.dashboard, element: lazyEl(<DashboardPage />) },
       { path: ROUTES.recents, element: lazyEl(<RecentsPage />) },
+      { path: ROUTES.demand, element: lazyEl(<DemandPage />) },
       { path: ROUTES.withdrawals, element: lazyEl(<WithdrawalsPage />) },
     ],
   },
