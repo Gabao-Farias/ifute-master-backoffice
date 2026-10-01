@@ -22,6 +22,7 @@ import {
   type PlatformWithdrawalRow,
   type WithdrawalStatus,
 } from '@/api/platform-withdrawal';
+import { InactivityCard } from '@/components/account-health/inactivity-card';
 import {
   Card,
   CardContent,
@@ -126,6 +127,8 @@ export default function WithdrawalsPage() {
           });
         }}
       />
+
+      <InactivityCard />
 
       <PixKeyCard
         loading={pixKey.isPending}
